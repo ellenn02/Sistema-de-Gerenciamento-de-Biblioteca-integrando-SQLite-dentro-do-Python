@@ -1,0 +1,39 @@
+biblioteca/
+│
+├── data/
+│   ├── livros.csv
+│   ├── usuarios.csv
+│   └── emprestimos.csv
+│
+├── src/
+│   ├── main.py                  # Arquivo principal do sistema
+│   ├── database.py              # Módulo para manipulação do banco de dados
+│   ├── models.py                # Definições de modelos (livros, usuários, empréstimos)
+│   ├── menu.py                  # Módulo para exibição do menu e interação com o usuário
+│   └── utils.py                 # Funções utilitárias (se necessário)
+│
+├── requirements.txt             # Dependências do projeto
+├── .gitignore                    # Arquivo para ignorar arquivos indesejados no Git
+└── README.md                     # Documentação do projeto
+
+
+Descrição dos arquivos e diretórios:
+data/: Diretório que contém os arquivos CSV com os dados (livros, usuários e empréstimos).
+
+src/: Diretório que contém o código-fonte do projeto.
+
+main.py: Arquivo principal que executa o programa e controla a lógica do sistema.
+database.py: Módulo que contém funções para conectar e interagir com o banco de dados SQLite (criação de tabelas, inserções, consultas, etc.).
+models.py: Define as classes ou estruturas de dados que representam livros, usuários e empréstimos (opcional, dependendo da complexidade).
+menu.py: Contém funções relacionadas ao menu interativo e à interação do usuário.
+utils.py: Funções auxiliares que podem ser usadas em diferentes partes do projeto (opcional).
+requirements.txt: Lista de dependências do projeto (por exemplo, pandas e sqlite3), que pode ser instalada com o comando pip install -r requirements.txt.
+
+.gitignore: Especifica quais arquivos ou diretórios devem ser ignorados pelo Git (por exemplo, arquivos de banco de dados, arquivos temporários, etc.).
+
+README.md: Documentação do projeto, incluindo descrição, funcionalidades, como usar e requisitos.
+
+Como Implementar:
+Crie a estrutura de diretórios conforme descrito acima.
+Salve o código fornecido anteriormente nos arquivos apropriados (como main.py, database.py, etc.).
+Adicione os datasets (livros.csv, usuarios.csv, emprestimos.csv) ao diretório data/.
