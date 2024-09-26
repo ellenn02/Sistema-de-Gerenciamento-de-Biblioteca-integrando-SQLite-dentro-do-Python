@@ -1,0 +1,64 @@
+Para criar um banco de dados SQLite para o seu projeto de Sistema de Gerenciamento de Biblioteca, você pode usar o seguinte código Python. Ele irá criar um banco de dados chamado biblioteca.db e as tabelas necessárias (livros, usuarios, e emprestimos). Você pode executar este código para inicializar o banco de dados.
+
+Código para Criar o Banco de Dados
+
+import sqlite3
+
+# Função para conectar ao banco de dados
+def connect():
+    conn = sqlite3.connect('biblioteca.db')
+    return conn
+
+# Função para criar as tabelas necessárias no banco de dados
+def create_tables():
+    conn = connect()
+
+    # Criar tabela de livros
+    conn.execute('''CREATE TABLE IF NOT EXISTS livros (
+                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     titulo TEXT,
+                     autor TEXT,
+                     editora TEXT,
+                     ano_publicacao INTEGER,
+                     isbn TEXT)''')
+
+    # Criar tabela de usuários
+    conn.execute('''CREATE TABLE IF NOT EXISTS usuarios (
+                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     nome TEXT,
+                     sobrenome TEXT,
+                     endereco TEXT,
+                     email TEXT,
+                     telefone TEXT)''')
+
+    # Criar tabela de empréstimos
+    conn.execute('''CREATE TABLE IF NOT EXISTS emprestimos (
+                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     id_livro INTEGER,
+                     id_usuario INTEGER,
+                     data_emprestimo TEXT,
+                     data_devolucao TEXT,
+                     FOREIGN KEY(id_livro) REFERENCES livros(id),
+                     FOREIGN KEY(id_usuario) REFERENCES usuarios(id))''')
+
+    conn.commit()
+    conn.close()
+
+# Executa a criação do banco de dados e tabelas
+if __name__ == "__main__":
+    create_tables()
+    print("Banco de dados e tabelas criados com sucesso!")
+
+
+
+Como Usar o Código:
+Crie um arquivo Python: Salve o código acima em um arquivo chamado create_database.py.
+
+Execute o arquivo Python: No terminal ou prompt de comando, navegue até o diretório onde o arquivo foi salvo e execute:
+
+python create_database.py
+
+Verifique o banco de dados: Após executar o código, um arquivo chamado biblioteca.db será criado no mesmo diretório, contendo as tabelas livros, usuarios, e emprestimos.
+
+Adicionando Dados ao Banco de Dados
+Após criar o banco de dados e as tabelas, você pode usar o código que forneci anteriormente para inserir dados de livros, usuários e empréstimos. Certifique-se de ter os arquivos CSV prontos, ou você pode adicionar dados diretamente através de funções de inserção que você pode criar no mesmo arquivo ou em um arquivo separado.
