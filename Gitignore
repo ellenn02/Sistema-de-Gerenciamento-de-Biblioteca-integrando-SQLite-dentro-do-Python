@@ -1,0 +1,34 @@
+
+### Conteúdo do `.gitignore`:
+
+```gitignore
+# Ignore database files
+*.db
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore environment folders (if any)
+venv/
+env/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+
+Projeto: Sistema de Gerenciamento de Biblioteca
+
+Descrição: Desenvolver um sistema simples de gerenciamento de biblioteca utilizando Python e SQLite, permitindo o cadastro de livros e usuários, a realização de empréstimos e a consulta de livros emprestados.
+
+Funcionalidades Principais:
+
+Cadastro de livros (título, autor, editora, ano de publicação, ISBN).
+Registro de usuários (nome, sobrenome, endereço, e-mail, telefone).
+Empréstimos de livros (associando livro a usuário com datas de empréstimo e devolução).
+Consulta de livros atualmente emprestados.
+Atualização da data de devolução.
+Menu interativo para navegação nas funcionalidades.
+Objetivo: Criar uma solução prática para a gestão de uma biblioteca, facilitando o gerenciamento de livros, usuários e empréstimos com um banco de dados relacional local.
+
